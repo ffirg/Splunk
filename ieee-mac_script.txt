@@ -4,14 +4,17 @@
 # script to get and put in place latest IEEE MAC assignments for Splunk Device Vendor lookup table
 #
 
-# variables
-mailto="phil.griffiths@ee.co.uk"
-# need WB proxy to retrieve latest ieee definition files
-export http_proxy="10.225.255.103:3128"
+# variables - modify as appropriate for your site
+mailto="someone@somewhere"
+# if you need to use a proxy to retrieve from the internet set http_proxy
+export http_proxy="nn.nn.nn.nn:pppp"
+# this will be the name of your lookup table file:
+ieee="ieee-mac-oui.csv"
+# where you store our app lookups within Splunk:
+splunk_loc="/opt/splunk/etc/apps/OPEN-WIFI/lookups"
+# do not change these 2 tmp variables:
 tmpa="a"
 tmpb="b"
-ieee="ieee-mac-oui.csv"
-splunk_loc="/opt/splunk/etc/apps/OPEN-WIFI/lookups"
 
 function clean_up {
     trap "rm -f $tmpa $tmpb; exit" ERR EXIT INT TERM
