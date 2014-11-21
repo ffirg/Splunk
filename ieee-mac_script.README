@@ -1,0 +1,2 @@
+This is the README file for the ieee-mac-splunk.sh script
+This will retrieve the IEEE MAC assignments from the Internet and format for a Splunk lookup table.
