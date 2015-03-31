@@ -13,7 +13,7 @@ logdir="/opt/local/log/"
 logfile="`basename $0.log`"
 log="${logdir}${logfile}"
 datestamp="--- `date`"
-mailto="phil.griffiths@ee.co.uk"
+mailto="someone@somewhere"
 
 # clean up any deadwood created/left behind by this script
 function clean_up {
@@ -51,9 +51,9 @@ strip_header_line() {
 }
 
 transfer_file() {
-# scp over file to 10.246.4.196 [exprdbt1] port 22 using username=xxx and dir=xxx
+# scp over file to remote host port 22 using username=xxx and dir=xxx
   chmod 644 $1
-  scp $1 xfrnas@exprdbt1:in
+  scp $1 xxx@remote_host:in
 }
 
 archive_file(){
