@@ -52,6 +52,7 @@ strip_header_line() {
 
 transfer_file() {
 # scp over file to 10.246.4.196 [exprdbt1] port 22 using username=xxx and dir=xxx
+  chmod 644 $1
   scp $1 xfrnas@exprdbt1:in
 }
 
