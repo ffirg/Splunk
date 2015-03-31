@@ -53,7 +53,9 @@ strip_header_line() {
 transfer_file() {
 # scp over file to remote host port 22 using username=xxx and dir=xxx
   chmod 644 $1
-  scp $1 xxx@remote_host:in
+  remote_name="newport.`date +%d%m%y%H%M`.forud"
+  scp $1 xxx@remote_host:in/$remote_name && echo "Transferred over $remote_name"
+
 }
 
 archive_file(){
