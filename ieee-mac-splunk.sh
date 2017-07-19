@@ -62,7 +62,8 @@ tr 'a-z' 'A-Z' < $tmpa >$tmpb
 # clean up = get rid of spaces and replace with , separator
 # replace - MAC octet separator with :
 sed -i '1i\'"Vendor_MAC,Manufacturer" $tmpb
-sed -e 's/  /,/' -re 's/([0-9]+)-([0-9]+)-/\1:\2:/' < $tmpb > $ieee
+#sed -e 's/  /,/' -re 's/([0-9]+)-([0-9]+)-/\1:\2:/' < $tmpb > $ieee
+sed -e 's/ /,/' -re 's/([0-9A-F]+)-([0-9A-F]+)-/\1:\2:/' < $tmpb > $ieee
 
 # move new file in proper Splunk lookup location and make an old copy
 copy_old $ieee
